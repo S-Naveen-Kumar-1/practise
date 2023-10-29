@@ -3,7 +3,9 @@ const { connection } = require("./db");
 const { userRouter } = require("./routes/user.routes");
 const { todoRouter } = require("./routes/todo.routes");
 const app = express()
+const cors=require("cors")
 app.use(express.json());
+app.use(cors())
 app.use("/users",userRouter)
 app.use("/todos",todoRouter)
 
